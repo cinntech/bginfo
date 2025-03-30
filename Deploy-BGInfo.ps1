@@ -4,9 +4,9 @@ $bgiFile = "$destPath\CinnTech-Hostname.bgi"
 $shortcutScript = "$destPath\Startup-Shortcut.ps1"
 
 # Hosted file URLs (replace with your GitHub raw URLs or CDN links)
-$bginfoUrl = "https://raw.githubusercontent.com/cinntech/bginfo/main/BGInfo.exe"
-$bgiUrl = "https://raw.githubusercontent.com/cinntech/bginfo/main/CinnTech-Hostname.bgi"
-$shortcutUrl = "https://raw.githubusercontent.com/cinntech/bginfo/main/Startup-Shortcut.ps1"
+$bginfoUrl = "https://github.com/cinntech/bginfo/raw/refs/heads/main/Bginfo.exe"
+$bgiUrl = "https://github.com/cinntech/bginfo/raw/refs/heads/main/cinntechBGinfo.bgi"
+$shortcutUrl = "https://github.com/cinntech/bginfo/raw/refs/heads/main/Startup-Shortcut.ps1"
 
 # Create folder
 if (-not (Test-Path $destPath)) {
