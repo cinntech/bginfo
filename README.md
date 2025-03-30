@@ -1,72 +1,49 @@
-# BGInfo Deployment for Windows Endpoints
+# BGInfo Deployment by CinnTech
 
-This repository provides everything needed to deploy [BGInfo](https://learn.microsoft.com/en-us/sysinternals/downloads/bginfo) via SuperOps or any RMM to show hostname and key info on the desktop background.
+This repository contains a pre-configured BGInfo deployment setup to display the Windows hostname and other useful information directly on the desktop background.
 
----
-
-## ✅ Features
-- Displays Windows computer name, username, and IP on desktop
-- Branded with "Managed by CinnTech"
-- Silent install and runs at every user login
-- Compatible with SuperOps scripting engine
+BGInfo is a lightweight, trusted tool by Microsoft Sysinternals that overlays system info on the user's desktop – perfect for identification, remote support, and audits.
 
 ---
 
-## 📦 Files Included
+## ✅ What This Shows
 
-| File                    | Purpose                                                      |
-|-------------------------|--------------------------------------------------------------|
-| `Deploy-BGInfo.ps1`     | Installs BGInfo and runs it silently                         |
-| `Startup-Shortcut.ps1`  | Creates a shortcut to run BGInfo at user login              |
-| `CinnTech-Hostname.bgi` | Preconfigured layout file with desired fields and branding  |
-| `LICENSE`               | MIT License                                                  |
-
----
-
-## 🛠️ How to Deploy with SuperOps
-
-### Step 1: Upload Files
-Upload all files to a public location (your GitHub raw URLs or private storage with direct links).
-
-### Step 2: Adjust URLs in `Deploy-BGInfo.ps1`
-Update the URLs in the script to point to your hosted copies of:
-- `Bginfo.exe`
-- `CinnTech-Hostname.bgi`
-- `Startup-Shortcut.ps1`
-
-### Step 3: Create Script in SuperOps
-Paste the contents of `Deploy-BGInfo.ps1` into a new script in SuperOps.
-
-### Step 4: Set Execution
-- Run **once on install**
-- Then, **create a script schedule to run at every user login** (if not using the startup shortcut method)
-
-### Optional: Deploy `Startup-Shortcut.ps1` via SuperOps or include it in the first script
-This ensures BGInfo re-applies on every user login.
+- **Computer Name**
+- **Username**
+- **IP Address (IPv4)**
+- **OS Version**
+- **Last Reboot**
+- **Managed by CinnTech** (branding)
 
 ---
 
-## 🎨 Screenshot (Optional)
-Add a screenshot here showing what the BGInfo overlay looks like.
+## 📦 Files
+
+- `Deploy-BGInfo.ps1`: Deploys BGInfo, downloads files, and runs it silently.
+- `Startup-Shortcut.ps1`: Adds a startup shortcut so BGInfo applies on every login.
+- `CinnTech-Hostname.bgi`: Preconfigured BGInfo layout.
+- `BGInfo.exe`: Official executable (or use a direct download link).
+- `LICENSE`: MIT License.
 
 ---
 
-## 🔐 Fields in Use (from .BGI)
-- Computer Name
-- Username
-- IP Address
-- Custom Text: `Managed by CinnTech`
+## 🚀 Deployment via SuperOps
+
+1. Upload all files to a public GitHub repo or internal file share.
+2. Modify URLs in `Deploy-BGInfo.ps1` to reflect your hosted paths.
+3. Deploy via SuperOps using a script task.
+
+**Recommended:** Run once at install + a scheduled task for login, or add to startup.
 
 ---
 
-## 🤝 License
-MIT — free to use, modify, and distribute.
+## 💡 Why This?
+
+- Easy identification of machines during support
+- Clean, branded display of key info
+- Lightweight and non-intrusive
+- Ideal for managed IT environments
 
 ---
 
-For questions or customization:
-**https://cinntech.com**
-
-> Professional, automated desktop info overlays — powered by CinnTech.
-
----
+© CinnTech. For client inquiries or issues, visit [https://cinntech.com](https://cinntech.com)
